@@ -140,6 +140,8 @@ bindsym $mod+r mode "resize"
 
 bar 
 {
+	mode hide
+	modifier $mod
 	position top
 	id bar-1
 	hidden_state hide
