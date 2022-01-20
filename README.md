@@ -5,7 +5,7 @@
 ### What's inside?
 
     .
-    ├── install.sh						# Moves / Symlinks Dotfiles & Folders into Filesystem                   
+    ├── install.sh            # Moves / Symlinks Dotfiles & Folders into Filesystem                   
     ├── bin                   
     │   ├── .alias            # Rename Commands / Set Default Parameters
     │   ├── .funcs            # Custom Functions
