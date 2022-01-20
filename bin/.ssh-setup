@@ -1,10 +1,11 @@
+#!/bin/zsh
 # .ssh-setup
 
 SSH_ENV="${HOME}/.ssh/environment"
 
 function add_private_ssh_keys {
 	for file in $HOME/.ssh/private/*; do
-		ssh-add $HOME/.ssh/private/$file
+		ssh-add $file
 	done
 }
 
@@ -27,3 +28,5 @@ function setup_ssh {
 		start_ssh_agent;
 	fi
 }
+
+setup_ssh
