@@ -1,0 +1,6 @@
+# .profile
+
+#########
+# $PATH #
+#########
+source ~/.path

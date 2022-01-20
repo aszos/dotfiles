@@ -1,0 +1,29 @@
+# .ssh-setup
+
+SSH_ENV="${HOME}/.ssh/environment"
+
+function add_private_ssh_keys {
+	for file in $HOME/.ssh/private/*; do
+		ssh-add $HOME/.ssh/private/$file
+	done
+}
+
+function start_ssh_agent {
+	echo -n "Starting new SSH agent..."
+	ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+	echo "Success."
+	chmod 600 "${SSH_ENV}"
+	. "${SSH_ENV}" > /dev/null
+	add_private_ssh_keys 
+}
+
+function setup_ssh {
+	if [ -f "{$SSH_ENV}" ]; then
+		. "${SSH_ENV}" > /dev/null
+		ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+			start_ssh_agent;
+		}
+	else
+		start_ssh_agent;
+	fi
+}

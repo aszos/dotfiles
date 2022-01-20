@@ -1,0 +1,69 @@
+[user]
+	name = Alex Szostek
+
+[alias]
+    a ="!f() { \
+    printf \"%s\" \"Adding all files... \"\"$1\";\
+        if git add -A &> /dev/null; then\
+            printf \"%s\\n\" \"${SUCCESS_EMOJI}\";\
+        else\
+            printf \"%s\\n\" \"${FAIL_EMOJI}\";\
+        fi\
+    }; f"
+
+    b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+    c ="!f() { \
+    printf \"%s\" \"Committing... \";\
+        if git commit -m \"$1\" &> /dev/null; then\
+            printf \"%s\\n\" \"${SUCCESS_EMOJI}\";\
+        else\
+            printf \"%s\\n\" \"${FAIL_EMOJI}\";\
+        fi\
+    }; f"
+
+    co = checkout
+
+    p ="!f() { \
+
+    printf \"%s\" \"Pushing... \";\
+        if git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) &> /dev/null; then\
+            printf \"%s\\n\" \"${SUCCESS_EMOJI}\";\
+        else\
+            printf \"%s\\n\" \"${FAIL_EMOJI}\";\
+        fi\
+    }; f"
+
+    s = status
+
+    undo = reset --soft HEAD^
+
+    cp ="!f() { \
+        if git c \"$1\"; then\
+               git p;\
+				fi\
+		}; f"
+
+    acp ="!f() { \
+    if git a; then\
+        if git c \"$1\"; then\
+            git p;\
+                fi\
+            fi\
+    }; f"
+
+[init]
+	templateDir = ~/.githooks/
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+
+[core]
+	autocrlf = true
+	editor = vim
+	pager = less
