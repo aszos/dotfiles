@@ -5,7 +5,7 @@
 [alias]
     a ="!f() { \
     printf \"%s\" \"Adding all files... \"\"$1\";\
-        if git add -A &> /dev/null; then\
+        if git add -A  2>/dev/null; then\
             printf \"%s\\n\" \"${SUCCESS_EMOJI}\";\
         else\
             printf \"%s\\n\" \"${FAIL_EMOJI}\";\
@@ -16,7 +16,7 @@
 
     c ="!f() { \
     printf \"%s\" \"Committing... \";\
-        if git commit -m \"$1\" &> /dev/null; then\
+        if git commit -m \"$1\" -q 2>/dev/null; then\
             printf \"%s\\n\" \"${SUCCESS_EMOJI}\";\
         else\
             printf \"%s\\n\" \"${FAIL_EMOJI}\";\
@@ -27,7 +27,7 @@
 
     p ="!f() { \
     printf \"%s\" \"Pushing... \";\
-        if git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) &> /dev/null; then\
+        if git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) 2>/dev/null; then\
             printf \"%s\\n\" \"${SUCCESS_EMOJI}\";\
         else\
             printf \"%s\\n\" \"${FAIL_EMOJI}\";\
