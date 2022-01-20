@@ -1,5 +1,6 @@
 [user]
 	name = Alex Szostek
+	email = 8537352+aszos@users.noreply.github.com
 
 [alias]
     a ="!f() { \
@@ -25,7 +26,6 @@
     co = checkout
 
     p ="!f() { \
-
     printf \"%s\" \"Pushing... \";\
         if git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) &> /dev/null; then\
             printf \"%s\\n\" \"${SUCCESS_EMOJI}\";\

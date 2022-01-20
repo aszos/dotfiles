@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 # cd
-alias cdp="cd ${PROJECTS}
-alias cddot="cd ${DOTFILES_PROJECT}
+alias cdp="cd ${PROJECTS}"
+alias cddot="cd ${DOTFILES_PROJECT}"
 
 # grep
 alias grep="grep --color"
@@ -14,3 +14,6 @@ alias ls="ls -AhG"
 
 # dotfiles
 alias resource="source ${HOME}/.zshrc" 
+
+# git 
+alias gits="git status"

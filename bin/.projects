@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+#################
+# Projects Path #
+#################
+mkdir -p ${HOME}/Projects
+export PROJECTS="${HOME}/Projects"
+
+####################
+# Dotfiles Project #
+####################
+export DOTFILES_PROJECT="${HOME}/Projects/dotfiles"
+export DOTFILES_BIN="${DOTFILES_PROJECT}/bin"
