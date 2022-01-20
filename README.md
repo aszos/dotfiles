@@ -22,7 +22,7 @@
     │   ├── .gitconfig        # Git Configuration
     │   ├── .githooks
     │   │   ├── hooks         # Functions to run during Git commit/push/etc.
-    └── README.md           	# The file you're reading right now!
+    └── README.md             # The file you're reading right now!
 
 
 **Installing**
