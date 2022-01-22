@@ -1,4 +1,4 @@
 ##################
 # Command Prompt #
 ##################
-PROMPT="%F{cyan}%1~%F{blue}"$'\n'"⇀%f "
+PROMPT="%F{yellow}%1~%F{blue}"$'\n'"⇀%f "
